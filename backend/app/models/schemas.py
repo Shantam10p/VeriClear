@@ -32,6 +32,10 @@ class BillingData(BaseModel):
     prorated_charge: float
     overage_charge: float
     taxes_and_fees: float
+    primary_increase_reason: str
+    detailed_reasons: list[str]
+    recommended_next_step: str
+    is_one_time_charge: bool
 
 
 class QueryResponse(BaseModel):
