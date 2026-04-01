@@ -1,9 +1,12 @@
 from fastapi import APIRouter
 
+from app.models.schemas import QueryRequest, QueryResponse
+from app.orchestrator.pipeline import pipeline
+
 
 router = APIRouter()
 
 
 @router.post("/query")
-async def query() -> dict[str, str]:
-    return {"status": "not_implemented"}
+async def query(request: QueryRequest) -> QueryResponse:
+    return pipeline.run(request)
