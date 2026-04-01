@@ -51,7 +51,6 @@ class IntentAgent:
             "Tech support and account management should be classified separately from billing."
         )
         user_prompt = (
-            f"Channel: {request.channel}\n"
             f"Customer ID: {request.customer_id}\n"
             f"Customer message: {request.message}"
         )

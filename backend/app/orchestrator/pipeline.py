@@ -16,7 +16,6 @@ class QueryPipeline:
             "[IntentAgent]",
             {
                 "customer_id": request.customer_id,
-                "channel": request.channel,
                 "intent": router_result.intent,
                 "emotion": router_result.emotion,
                 "confidence": router_result.confidence,
@@ -34,7 +33,6 @@ class QueryPipeline:
             )
             return QueryResponse(
                 customer_id=request.customer_id,
-                channel=request.channel,
                 intent=router_result.intent,
                 emotion=router_result.emotion,
                 confidence=router_result.confidence,
@@ -47,7 +45,6 @@ class QueryPipeline:
 
         return QueryResponse(
             customer_id=request.customer_id,
-            channel=request.channel,
             intent=router_result.intent,
             emotion=router_result.emotion,
             confidence=router_result.confidence,

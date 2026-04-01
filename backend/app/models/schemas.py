@@ -11,7 +11,6 @@ EmotionLabel = Literal["neutral", "happy", "frustrated", "confused", "threatenin
 class QueryRequest(BaseModel):
     customer_id: str = Field(..., min_length=1)
     message: str = Field(..., min_length=1)
-    channel: Literal["app", "sms", "chat", "ivr"] = "app"
 
 
 class IntentResult(BaseModel):
@@ -40,7 +39,6 @@ class BillingData(BaseModel):
 
 class QueryResponse(BaseModel):
     customer_id: str
-    channel: str
     intent: IntentLabel
     emotion: EmotionLabel
     confidence: float
